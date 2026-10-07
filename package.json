@@ -1,0 +1,16 @@
+{
+  "name": "dsa007-leetcode-sync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome MV3 extension that commits Accepted LeetCode solutions to ganesh-tadigadapa/DSA_007",
+  "type": "module",
+  "scripts": {
+    "icons": "node scripts/make-icons.mjs",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test tests/",
+    "build": "npm run icons && npm run validate && npm test && node scripts/package.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
