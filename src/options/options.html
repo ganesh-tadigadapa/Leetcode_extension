@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DSA_007 LeetCode Sync — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <h1>DSA_007 LeetCode Sync — Settings</h1>
+
+    <section class="card">
+      <h2>1. Create a fine-grained GitHub token</h2>
+      <p>
+        The extension talks directly to the GitHub API (no backend). Use a
+        <strong>fine-grained personal access token</strong> limited to a single repository — it can't touch anything else in your account.
+      </p>
+      <ol>
+        <li>Open <a id="token-link" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → New fine-grained token</a>.</li>
+        <li><strong>Repository access:</strong> “Only select repositories” → <code id="repo-hint">ganesh-tadigadapa/DSA_007</code>.</li>
+        <li><strong>Repository permissions:</strong> <code>Contents</code> → <code>Read and write</code>. (<code>Metadata: Read-only</code> is added automatically.) Leave everything else as “No access”.</li>
+        <li>Choose an expiration, generate, and paste the token below.</li>
+      </ol>
+      <p class="muted">The token is kept only in this browser's local extension storage (<code>chrome.storage.local</code>, not synced to your Google account) and is only sent to <code>api.github.com</code>.</p>
+    </section>
+
+    <form id="form" class="card" autocomplete="off">
+      <h2>2. Connect</h2>
+      <label>
+        GitHub token
+        <input id="token" type="password" placeholder="github_pat_…" spellcheck="false" />
+      </label>
+      <div class="grid">
+        <label>Owner <input id="owner" required spellcheck="false" /></label>
+        <label>Repository <input id="repo" required spellcheck="false" /></label>
+        <label>Folder in repo <input id="basePath" spellcheck="false" /></label>
+      </div>
+      <label class="check"><input id="autoSync" type="checkbox" /> Automatically sync Accepted submissions</label>
+      <div class="actions">
+        <button type="submit" class="primary">Save &amp; test connection</button>
+        <button type="button" id="disconnect">Remove token</button>
+      </div>
+      <div id="status" class="status" role="status"></div>
+    </form>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
