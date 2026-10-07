@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>DSA_007 LeetCode Sync</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <img src="../../icons/icon32.png" alt="" width="20" height="20" />
+    <h1>DSA_007 LeetCode Sync</h1>
+    <button id="settings" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+  </header>
+
+  <section class="row">
+    <div class="label">GitHub</div>
+    <div class="value">
+      <span id="gh-dot" class="dot"></span>
+      <span id="gh-text">Checking…</span>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="label">Automatic sync</div>
+    <label class="switch">
+      <input type="checkbox" id="auto-sync" />
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="block">
+    <div class="label">Current problem</div>
+    <div id="problem" class="value muted">Open a problem on leetcode.com</div>
+    <div id="tags" class="tags"></div>
+  </section>
+
+  <section class="block">
+    <div class="label">Submission status</div>
+    <div id="submission" class="value muted">No submission yet</div>
+  </section>
+
+  <section class="block" id="target-block" hidden>
+    <div class="label">Target path</div>
+    <div class="path">
+      <span id="path-base"></span>/<input id="category" list="category-list" spellcheck="false" aria-label="Category folder" />/<span id="path-file"></span>
+    </div>
+    <datalist id="category-list"></datalist>
+  </section>
+
+  <div id="sync" class="notice" hidden></div>
+
+  <button id="upload" class="primary" disabled>Upload to GitHub</button>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
